@@ -14,8 +14,6 @@ export const getClerkUsers = async ({ userIds }: { userIds: string[] }) => {
             console.warn("No users found for the given IDs:", userIds);
             return [];
           }
-          console.log("User IDs:", userIds);
-console.log("Fetched Users Data:", data);
 
         const users = data.map((user) => ({
             id: user.id,
@@ -23,12 +21,11 @@ console.log("Fetched Users Data:", data);
             email: user.primaryEmailAddress?.emailAddress,
             avatar: user.imageUrl
         }))
-        console.log("users", users);
 
         const sortedUsers = userIds.map((email) => users.find((user) => user.email === email));
         return parseStringify(sortedUsers)
         
     } catch (err) {
-        console.log('Error fetching users')
+        console.log('Error fetching users', err)
     }
 }
