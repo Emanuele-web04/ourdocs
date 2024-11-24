@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import Image from "next/image";

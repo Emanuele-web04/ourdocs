@@ -2,7 +2,7 @@ import { liveblocks } from "@/lib/liveblocks";
 import { getUserColor } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-export async function POST(request: Request) {
+export async function POST() {
     const clerkUser = await currentUser();
 
     if(!clerkUser) redirect('/sign-in');
